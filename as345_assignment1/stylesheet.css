@@ -1,0 +1,15 @@
+body { 
+    
+}
+
+.box {
+    background-color: whitesmoke;
+    display: none;
+}
+
+.lat { 
+color: blue;
+}
+.long {
+    color: red;
+}
