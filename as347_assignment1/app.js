@@ -76,7 +76,6 @@ function Lines() {
             strokeWeight(1);
             line(longitudes[i], upper_y[i], longitudes[j], upper_y[j]);
             line(longitudes[i], lower_y[i], longitudes[j], lower_y[j]);
-        
         }
     }
 }
@@ -97,15 +96,20 @@ function Globe() {
 function setup() {
   //gets the coordinates from my instagram posts
   getCoords(); 
-  createCanvas(280,280);
-  //orients canvas to map coordinates to globe
-  translate(150,100);
+  var size = 1080;
+  createCanvas(size,size);
   background(255,255,255,255);
-  //create ornament    
-  Globe();
-  Orbs();
-  Lines();
- 
-  
+  //orients canvas to map coordinates to globe
+    translate(0, 100);
+    for(x = 0; x < 6; x++) {
+        for(y = 0; y < 5; y++) {
+            push();
+            translate(x * 300, y * 250);
+            Globe();
+            Orbs();
+            Lines();
+            pop();
+        }  
+    } 
 }
 
